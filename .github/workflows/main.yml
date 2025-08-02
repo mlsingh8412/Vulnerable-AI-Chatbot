@@ -19,7 +19,7 @@ jobs:
         run: |
           docker run --rm -u $(id -u):$(id -g) \
             -v ${{ github.workspace }}:/repo \
-            checkmarx/2ms git /repo \
+            checkmarx/2ms:3.21.0 git /repo \
             --stdout-format sarif \
             --report-path /repo/cx-output.sarif \
             --validate
