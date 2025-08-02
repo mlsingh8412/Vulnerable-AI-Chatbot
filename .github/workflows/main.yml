@@ -28,3 +28,10 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: cx-output.sarif
+
+      - name: Upload scan reports as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: secret-scan-reports
+          path: |
+            cx-output.sarif
